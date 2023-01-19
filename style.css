@@ -310,13 +310,13 @@ figcaption {
     text-align: center;
 }
 
-button.outline {
+button[outline] {
     background-color: transparent;
     border: 1px dashed var(--accent-1);
     color: var(--foreground);
 }
 
-button.outline:hover {
+button[outline]:hover {
     background-color: var(--accent-1);
     color: var(--background);
 }
