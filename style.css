@@ -1,0 +1,628 @@
+/* import zilla slab font and apply to all */
+@import url("https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300;400;500;600;700&display=swap");
+
+* {
+    font-family: "Zilla Slab", serif;
+}
+
+html {
+    --foreground: #051010;
+    --background: #fffbfe;
+    --gray: #bdbdbd;
+    /* --primary: #332211; */
+    --accent-1: #aa5042;
+    --accent-2: #af1b3f;
+    --accent-3: #3083dc;
+    --accent-4: #7b435b;
+}
+
+/* dark mode colors */
+@media (prefers-color-scheme: dark) {
+    html {
+        --foreground: #fffbfe;
+        --background: #051010;
+        --gray: #bdbdbd;
+    }
+}
+
+/* style body */
+body {
+    background-color: var(--background);
+    color: var(--foreground);
+    line-height: 1.4;
+    margin: 0;
+    padding: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+header {
+    margin: 0 auto;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+h3 {
+    font-size: 1.75rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+h4 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+h5 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+h6 {
+    font-size: 1.15rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+nav {
+    margin: 0 auto;
+    padding: 1rem 0;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 0.5rem;
+}
+
+nav ul li a {
+    color: var(--foreground);
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: var(--accent-1);
+}
+
+nav ul li details {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+nav ul li details summary {
+    cursor: pointer;
+    display: block;
+    padding: 0.5rem 1rem;
+    position: relative;
+    text-decoration: none;
+}
+
+nav ul li details summary::after {
+    border: 0.25rem solid transparent;
+    border-top-color: currentColor;
+    /* content: ""; */
+    display: inline-block;
+    height: 0;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+    width: 0;
+}
+
+nav ul li details[open] summary::after {
+    border: 0.25rem solid transparent;
+    border-bottom-color: currentColor;
+    display: inline-block;
+    height: 0;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+    width: 0;
+}
+
+nav ul li details ul {
+    background-color: var(--background);
+    border-radius: 0.25rem;
+    border-style: dashed;
+    border-width: 2px;
+    border-color: var(--accent-3);
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+    display: none;
+    left: 0;
+    list-style: none;
+    margin: 0;
+    min-width: 100%;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    z-index: 1;
+}
+
+nav ul li details[open] ul {
+    display: block;
+}
+
+nav ul li details ul li {
+    padding: 0.5rem 1rem;
+}
+
+nav ul li details ul li a {
+    color: var(--foreground);
+    text-decoration: none;
+}
+
+nav ul li details ul li a:hover {
+    color: var(--accent-1);
+}
+
+section {
+    margin: 0 auto;
+    padding: 1rem 0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    background-color: var(--background);
+    border: 1px dashed var(--gray);
+    border-radius: 0.25rem;
+    color: var(--foreground);
+    display: block;
+    font-size: 1rem;
+    margin: 0.5rem auto;
+    padding: 0.5rem 1rem;
+    width: 80%;
+    max-width: 400px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: var(--accent-4);
+    outline: none;
+}
+
+button {
+    background-color: var(--accent-1);
+    border: 0;
+    border-radius: 0.25rem;
+    color: var(--background);
+    cursor: pointer;
+    display: block;
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    padding: 0.5rem 1rem;
+    width: 100%;
+}
+
+button:hover {
+    background-color: var(--accent-2);
+}
+
+button:disabled {
+    background-color: var(--gray);
+    cursor: not-allowed;
+}
+
+button[type="submit"] {
+    width: 85%;
+    max-width: 435px;
+    margin: 0.5rem auto;
+}
+
+label {
+    display: block;
+    font-size: 0.75rem;
+    margin: 0.5rem auto;
+    text-align: center;
+}
+
+/* TODO input checkbox */
+
+blockquote {
+    border-left: 0.25rem solid var(--accent-4);
+    color: var(--foreground);
+    font-size: 1.25rem;
+    padding: 0.5rem 1rem;
+}
+
+ul {
+    list-style: square;
+}
+
+ul li {
+    margin: 0.5rem 0;
+}
+
+a {
+    color: var(--accent-1);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--accent-1);
+}
+
+/* del {
+        color: var(--gray);
+      }
+
+      ins {
+        color: var(--accent-3);
+        text-decoration: none;
+      } */
+
+s {
+    color: var(--gray);
+}
+
+kbd {
+    background-color: var(--background);
+    border: 1px dashed var(--gray);
+    border-radius: 0.25rem;
+    color: var(--foreground);
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin: 0 0.25rem;
+    padding: 0.25rem 0.5rem;
+}
+
+mark {
+    background-color: var(--accent-1);
+    color: var(--foreground);
+    padding: 0 0.25rem;
+}
+
+figure {
+    margin: 0;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+figcaption {
+    color: var(--gray);
+    font-size: 0.75rem;
+    margin: 0.5rem auto;
+    text-align: center;
+}
+
+button.outline {
+    background-color: transparent;
+    border: 1px dashed var(--accent-1);
+    color: var(--foreground);
+}
+
+button.outline:hover {
+    background-color: var(--accent-1);
+    color: var(--background);
+}
+
+input[type="search"] {
+    background-color: var(--background);
+    border: 1px dashed var(--gray);
+    border-radius: 0.25rem;
+    color: var(--foreground);
+    display: block;
+    font-size: 1rem;
+    margin: 0.5rem auto;
+    padding: 0.5rem 1rem;
+    width: 80%;
+    max-width: 435px;
+}
+
+input[type="search"]:focus {
+    border-color: var(--accent-3);
+    outline: none;
+}
+
+select {
+    background-color: var(--background);
+    border: 1px dashed var(--gray);
+    border-radius: 0.25rem;
+    color: var(--foreground);
+    display: block;
+    font-size: 1rem;
+    margin: 0.5rem auto;
+    padding: 0.5rem 1rem;
+    width: 80%;
+    max-width: 435px;
+    appearance: none;
+}
+
+select:focus {
+    color: var(--accent-2);
+    outline: none;
+}
+
+form small {
+    color: var(--gray);
+    display: block;
+    font-size: 0.75rem;
+    margin: 0.5rem auto;
+    margin-top: -5px;
+    text-align: center;
+}
+
+textarea {
+    background-color: var(--background);
+    border: 1px dashed var(--gray);
+    border-radius: 0.25rem;
+    color: var(--foreground);
+    display: block;
+    font-size: 1rem;
+    margin: 0.5rem auto;
+    padding: 0.5rem 1rem;
+    width: 80%;
+    max-width: 435px;
+}
+
+textarea:focus {
+    border-color: var(--accent-2);
+    outline: none;
+}
+
+input[type="file"] {
+    background-color: var(--background);
+    border: 1px dashed var(--gray);
+    border-radius: 0.25rem;
+    color: var(--foreground);
+    display: block;
+    font-size: 1rem;
+    margin: 0.5rem auto;
+    padding: 0.5rem 1rem;
+    width: 80%;
+    max-width: 400px;
+}
+
+input[type="file"]:focus {
+    border-color: var(--accent-2);
+    outline: none;
+}
+
+input[type="range"] {
+    /* TODO */
+    appearance: none;
+    background-color: var(--background);
+    border: 1px dashed var(--gray);
+    border-radius: 0.25rem;
+    color: var(--foreground);
+    display: block;
+    font-size: 1rem;
+    margin: 0.5rem auto;
+    padding: 0.5rem 1rem;
+    width: 80%;
+    max-width: 400px;
+}
+
+input[type="range"]:focus {
+    border-color: var(--accent-2);
+    outline: none;
+}
+
+/* TODO valid input */
+/* input[type="text"]:valid {
+        border-color: var(--accent-3);
+      } */
+
+input:disabled {
+    background-color: var(--gray);
+    border-color: var(--gray);
+    color: var(--background);
+}
+
+input[type="date"] {
+    background-color: var(--background);
+    border: 1px dashed var(--gray);
+    border-radius: 0.25rem;
+    color: var(--accent-3);
+    display: block;
+    font-size: 1rem;
+    margin: 0.5rem auto;
+    padding: 0.5rem 1rem;
+    width: 80%;
+    max-width: 400px;
+}
+
+input[type="date"]:focus {
+    border-color: var(--accent-1);
+    outline: none;
+}
+
+input[type="time"] {
+    background-color: var(--background);
+    border: 1px dashed var(--gray);
+    border-radius: 0.25rem;
+    color: var(--accent-3);
+    display: block;
+    font-size: 1rem;
+    margin: 0.5rem auto;
+    padding: 0.5rem 1rem;
+    width: 80%;
+    max-width: 400px;
+}
+
+input[type="time"]:focus {
+    border-color: var(--accent-2);
+    outline: none;
+}
+
+/* TODO
+      input[type="color"] {
+        background-color: var(--background);
+        border: 1px dashed var(--gray);
+        border-radius: 0.25rem;
+        color: var(--accent-3);
+        display: block;
+        font-size: 1rem;
+        margin: 0.5rem auto;
+        padding: 0.5rem 1rem;
+        width: 80%;
+        max-width: 400px;
+      }
+
+      input[type="color"]:focus {
+        border-color: var(--accent-2);
+        outline: none;
+      } */
+
+fieldset {
+    border: 1px dashed var(--gray);
+    border-radius: 0.25rem;
+    margin: 0.5rem auto;
+    padding: 0.5rem 1rem;
+    width: 80%;
+    max-width: 400px;
+}
+
+fieldset legend {
+    color: var(--foreground);
+    font-size: 1rem;
+}
+
+/* TODO input reset and input submit */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 0.5rem auto;
+}
+
+table thead {
+    background-color: var(--background);
+    color: var(--foreground);
+}
+
+table thead th {
+    border-bottom: 1px dashed var(--gray);
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+table tbody tr {
+    border-bottom: 1px dashed var(--gray);
+}
+
+table tbody tr:last-child {
+    border-bottom: none;
+}
+
+table tbody tr td {
+    font-size: 0.75rem;
+    padding: 0.5rem 1rem;
+}
+
+details {
+    margin: 0.5rem auto;
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
+}
+
+details[open] {
+    border: 1px dashed var(--gray);
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
+}
+
+details[open] summary {
+    color: var(--foreground);
+    font-size: 1rem;
+}
+
+/* details[open] summary::before {
+        content: "▼";
+        margin-right: 0.5rem;
+      } */
+
+details summary {
+    color: var(--accent-3);
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* details summary::before {
+        content: "►";
+        margin-right: 0.5rem;
+      } */
+
+details summary:focus {
+    outline: none;
+}
+
+details ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+details ul li {
+    font-size: 0.75rem;
+    margin: 0.5rem 0;
+}
+
+details ul li a {
+    color: var(--accent-3);
+    text-decoration: none;
+}
+
+details ul li a:hover {
+    color: var(--accent-2);
+}
+
+details ul li a:focus {
+    outline: none;
+}
+
+details ul li a:active {
+    color: var(--accent-1);
+}
+
+footer {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-size: 0.75rem;
+    padding: 0.5rem 1rem;
+    text-align: center;
+}
+
+hr {
+    border: 1px dashed var(--gray);
+    margin: 1.5rem auto;
+}
+
+/* TODO progress */
+
+/* dialog {
+        background-color: var(--background);
+        border: 1px dashed var(--gray);
+        border-radius: 0.25rem;
+        color: var(--foreground);
+        font-size: 1rem;
+        margin: 0.5rem auto;
+        padding: 0.5rem 1rem;
+        width: 80%;
+        max-width: 400px;
+      } */
