@@ -18,3 +18,10 @@ It's not really framework, just a collection of CSS styles for semantic HTML
 
 ## Usage
 
+Add this to your HTML:
+```html
+<style>
+  @import url("https://raw.githubusercontent.com/blobbybilb/slabcss/main/style.css");
+</style>
+```
+And HTML as usual. The styles are applied to semantic HTML elements.
